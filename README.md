@@ -1,5 +1,5 @@
 
-# RoboFusion Dataset
+# RoboSense Dataset
 
 The RoboFusion Dataset is an open-source Real and Synthetic Dataset designed to support hazard prediction and environmental monitoring in industrial environments using Autonomous Mobile Robots (AMRs) and fixed IoT sensor suites.
 

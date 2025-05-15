@@ -1,7 +1,7 @@
 
 # RoboSense Dataset
 
-The RoboFusion Dataset is an open-source Real and Synthetic Dataset designed to support hazard prediction and environmental monitoring in industrial environments using Autonomous Mobile Robots (AMRs) and fixed IoT sensor suites.
+The RoboSense Dataset is an open-source Real and Synthetic Dataset designed to support hazard prediction and environmental monitoring in industrial environments using Autonomous Mobile Robots (AMRs) and fixed IoT sensor suites.
 
 This repository provides:
 • Real and synthetic datasets for both normal and hazard conditions  
@@ -12,7 +12,7 @@ This repository provides:
 
 ## Project Overview
 
-RoboFusion is a data simulation and augmentation framework that collects sensor data from 2 mobile AMRs and 2 fixed sensor suites. The goal is to create a comprehensive dataset that includes both normal and hard-to-capture hazard scenarios using advanced modeling and augmentation techniques. The synthetic data mirrors real-world sensor signals under different environmental and operational conditions.
+RoboSense is a data simulation and augmentation framework that collects sensor data from 2 mobile AMRs and 2 fixed sensor suites. The goal is to create a comprehensive dataset that includes both normal and hard-to-capture hazard scenarios using advanced modeling and augmentation techniques. The synthetic data mirrors real-world sensor signals under different environmental and operational conditions.
 
 ---
 
@@ -44,7 +44,7 @@ Each suite (AMR_1, AMR_2, Suite_1, Suite_2) includes:
 ## How to Use
 
 1. Clone the repository  
-   `git clone https://github.com/Amr-Khamis-84/RoboFusion-Dataset.git`
+   `git clone https://github.com/Amr-Khamis-84/RoboSense-Dataset.git`
 2. Explore the synthetic data files and preprocessing scripts  
 3. Use or adapt the ML model pipeline to validate hazard detection  
 4. Extend the synthetic generation techniques for your own use cases or datasets

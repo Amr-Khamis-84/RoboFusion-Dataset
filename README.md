@@ -1,72 +1,37 @@
+# RoboSense: Hybrid Dataset Generation for Industrial Hazard Detection
 
-# RoboFusion Dataset
+This project provides a comprehensive dataset generation framework named **RoboSense**, designed to assist in training and validating machine learning models for hazard detection in industrial environments. The framework supports the creation of both real and synthetic datasets.
 
-The RoboFusion Dataset is an open-source Real and Synthetic Dataset designed to support hazard prediction and environmental monitoring in industrial environments using Autonomous Mobile Robots (AMRs) and fixed IoT sensor suites.
+## Project Description
 
-This repository provides:
-• Real and synthetic datasets for both normal and hazard conditions  
-• Scripts for data augmentation for normal data synthesizing, fit models for hazard data synthesizing, hazard injection, and machine learning model validation (after paper publication)  
-• A reproducible framework for synthetic data generation based on real-world behavior (after paper publication)
+RoboSense is a hybrid (real and synthetic) dataset generation framework developed for use in industrial facilities equipped with IoT-based sensor networks and mobile robotic platforms. The objective is to enhance environmental monitoring and support predictive hazard detection using AI.
 
----
+## Components
 
-## Project Overview
-
-RoboFusion is a data simulation and augmentation framework that collects sensor data from 2 mobile AMRs and 2 fixed sensor suites. The goal is to create a comprehensive dataset that includes both normal and hard-to-capture hazard scenarios using advanced modeling and augmentation techniques. The synthetic data mirrors real-world sensor signals under different environmental and operational conditions.
-
----
+- **Sensor Suites**: Fixed and mobile sensors collecting telemetry data (temperature, humidity, pressure, gas concentrations).
+- **Autonomous Mobile Robots (AMRs)**: Two robots equipped with sensor modules and localization via NFC tags.
+- **Real Dataset**: Data collected over 90 days under normal and rare hazard conditions.
+- **Synthetic Dataset**: Augmented using statistical techniques (normal) and fitted curve models (hazard).
+- **ML Validation Pipeline**: Includes Random Forest, SVM, MLP, and XGBoost classifiers.
 
 ## Dataset Structure
 
-• `Real_Dataset.csv`: Raw environmental readings collected via the ThingsBoard IoT platform  
-• `Synthetic_Normal_Dataset.html`: Generated using:  
-  - Noise Injection  
-  - Time Warping  
-  - Feature Scaling  
-• `Synthetic_Hazard_Dataset.html`: Simulated using multi-stage hazard models (Ignition, Growth, Peak, Decay)  
-• `Inject_Hazards_and_ML_Model.html`: Code for merging hazard and normal data and running ML predictions  
-• `Merged_Dataset.csv`: Final combined dataset ready for training
+- `Real_Dataset.csv`: Collected from four sensor suites across 90 days (including rare real hazard events).
+- `Synthetic_Dataset.csv`: Includes 360 days of synthesized data for both normal and 15 hazard event types.
 
----
+## Key Features
 
-## Sensor Suite
+- Generalizable to multiple industrial settings.
+- Supports binary classification: `Normal` vs. `Hazard_1`.
+- Time-aligned sensor data at 1-minute intervals.
+- Integration-ready with ThingsBoard IoT platform via MQTT.
 
-Each suite (AMR_1, AMR_2, Suite_1, Suite_2) includes:  
-• T1, T2: Temperature sensors (ambient and onboard)  
-• H%: Relative Humidity  
-• P: Barometric Pressure  
-• AL: Altitude  
-• Dust: Particulate Matter Sensor  
-• MQ2 – MQ135: Gas sensors (CO, CH₄, H₂, NH₃, LPG, alcohol, smoke, etc.)
+## Publications and Citations
 
----
+If you use this dataset or framework, please cite the following:
 
-## How to Use
+> RoboSense: A Hybrid Real and Synthetic Dataset Generation Framework for AI-driven Industrial Hazard Detection and Environmental Monitoring. Sensors, 2025.
 
-1. Clone the repository  
-   `git clone https://github.com/Amr-Khamis-84/RoboFusion-Dataset.git`
-2. Explore the synthetic data files and preprocessing scripts  
-3. Use or adapt the ML model pipeline to validate hazard detection  
-4. Extend the synthetic generation techniques for your own use cases or datasets
+## Additional Resources
 
----
-
-## License
-
-This project is licensed under the [Creative Commons Zero v1.0 Universal (CC0)](https://creativecommons.org/publicdomain/zero/1.0/).  
-You are free to copy, modify, distribute, and use the dataset without restriction.
-
----
-
-## Acknowledgments
-
-The author extends sincere thanks to the **Industry Service Complex (ISC)** at the **Arab Academy for Science, Technology and Maritime Transport (AASTMT), Main Campus, Alexandria, Egypt**, for providing access to the manufacturing facilities and testing environment through the **Projects Implementation Workshop**.
-
-During the preparation of this manuscript, the authors used **ChatGPT-4 (OpenAI, 2025)** for editorial suggestions and manuscript structuring. The authors have reviewed and validated all content manually.
-
----
-
-## Contact
-
-**Amr Khamis**  
-GitHub: [Amr-Khamis-84](https://github.com/Amr-Khamis-84)
+- ⚙️ See [`USAGE.md`](./USAGE.md) for detailed dataset reuse guidelines and instructions.
